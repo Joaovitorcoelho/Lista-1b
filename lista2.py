@@ -5,6 +5,7 @@
 
 from ast import Return
 from io import open_code
+import math
 
 
 def palindromo(texto):
@@ -96,7 +97,7 @@ def ordenamento_contrario(lista):
     Retorna:
         list: uma lista com os elementos em ordem inversa.
     """
-
+    return lista[::-1] 
 
 def maximo(lista):
     """Retorna o maior elemento da lista.
@@ -107,6 +108,7 @@ def maximo(lista):
     Retorna:
         int: o maior elemento da lista.
     """
+    return max(lista)
 
 
 def minimo(lista):
@@ -118,7 +120,7 @@ def minimo(lista):
     Retorna:
         int: o menor elemento da lista.
     """
-
+    return min(lista)
 
 def maior_menor(lista):
     """Calcule o maior e o menor número da lista recebida.
@@ -129,7 +131,7 @@ def maior_menor(lista):
     Retorna:
         uma tupla com dois números inteiros, o maior e o menor da lista.
     """
-
+    return max(lista), min(lista)
 
 def media_saltos_lista(saltos):
     """Receba uma lista com os saltos de um atleta e calcule a média
@@ -141,7 +143,8 @@ def media_saltos_lista(saltos):
     Retorna:
         float: a média dos saltos, de acordo com o enunciado.
     """
-
+    
+    return round(sum(saltos)/len(saltos),1)
 
 def contem(lista, item_procurado):
     """Verifica se uma lista contém um item procurado e devolve um valor booleano.
@@ -153,7 +156,7 @@ def contem(lista, item_procurado):
     Returns:
         bool: um valor booleano (True/False), de acordo com o enunciado.
     """
-
+    return (lista.count(item_procurado)) != 0
 
 def conta(lista, item_procurado):
     """Informa quantas ocorrências de um item existem numa lista.
@@ -165,7 +168,7 @@ def conta(lista, item_procurado):
     Returns:
         int: a quantidade de ocorrências do item procurado na lista.
     """
-
+    return (lista.count(item_procurado))
 
 def mes_extenso(mes):
     """Receba um número correspondente ao mês e devolva a abreviatura do
@@ -179,7 +182,8 @@ def mes_extenso(mes):
     Returns:
         string: a abreviatura do nome do mês, com 3 dígitos.
     """
-
+    listameses = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez']
+    return listameses[mes-1]
 
 def media_temperaturas(temperaturas):
     """Retorna a média das temperaturas da lista.
@@ -190,7 +194,7 @@ def media_temperaturas(temperaturas):
     Retorna:
         float: a média das temperaturas.
     """
-
+    return sum(temperaturas) / len(temperaturas)
 
 def leet(texto):
     """
@@ -204,7 +208,22 @@ def leet(texto):
     Retorna:
         string: o texto convertido, conforme o enunciado.
     """
-
+    texto = texto.replace('a','4')
+    texto = texto.replace('A','4')
+    texto = texto.replace('e','3')
+    texto = texto.replace('E','3')
+    texto = texto.replace('g','9')
+    texto = texto.replace('G','9')
+    texto = texto.replace('i','1')
+    texto = texto.replace('I','1')
+    texto = texto.replace('s','5')
+    texto = texto.replace('S','5')
+    texto = texto.replace('t','7')
+    texto = texto.replace('T','7')
+    texto = texto.replace('o','0')
+    texto = texto.replace('O','0')
+    
+    return texto
 
 def apaga(texto, n):
     """
@@ -354,4 +373,3 @@ if __name__ == "__main__":
     )
     if total == acertos:
         print("Parabéns, seu programa rodou sem falhas!")
-
